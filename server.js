@@ -5,7 +5,7 @@ const cors = require('cors')
 
 
 app.use(cors({
-    origin: 'https://cuongtwt.github.io/Client/',
+    origin: '*'
 }))
 app.use(express.json());
 app.get('/', (req, res) => {
