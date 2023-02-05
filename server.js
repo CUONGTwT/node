@@ -4,9 +4,8 @@ const fs = require('fs')
 const cors = require('cors')
 
 app.use(cors({
-    origin: 'http://127.0.0.1:5500',
+  origin:'https://cuongtwt.github.io/Client/'
 }))
-
 app.use(express.json());
 app.get('/', (req, res) => {
     fs.readFile('./server.json', 'utf8', (e, data) => {
