@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const fs = require('fs-extra')
+const fs = require('fs')
 const cors = require('cors')
 
 
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 
 app.post('/post', (req, res) => {
-    fs.readFile('./server.json', 'utf8', (e, data) => {
+       fs.readFile('./server.json', 'utf8', (e, data) => {
         let json = JSON.parse(data)
         const fill = json.filter(item => item.item === req.body.item)
         if (fill.length === 0) {
@@ -30,9 +30,6 @@ app.post('/post', (req, res) => {
             res.send(json)
             console.log('tài khoản đã tồn tại')
         }
-
-
     })
-
 })
 app.listen(3000, () => { console.log('server listening on port') })
