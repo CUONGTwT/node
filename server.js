@@ -18,8 +18,6 @@ app.get('/', (req, res) => {
 
 
 app.post('/post', (req, res) => {
-
-
     fs.readFile('./server.json', 'utf8', (e, data) => {
         let json = JSON.parse(data)
         const fill = json.filter(item => item.item === req.body.item)
@@ -32,9 +30,6 @@ app.post('/post', (req, res) => {
             res.send(json)
             console.log('tài khoản đã tồn tại')
         }
-
-
-
 
 
     })
