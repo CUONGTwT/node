@@ -1,10 +1,11 @@
 const express = require('express')
 const app = express()
-const fs = require('fs')
+const fs = require('fs-extra')
 const cors = require('cors')
 
+
 app.use(cors({
-  origin:'https://cuongtwt.github.io/Client/'
+    origin: 'https://cuongtwt.github.io/Client/',
 }))
 app.use(express.json());
 app.get('/', (req, res) => {
